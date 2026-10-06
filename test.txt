@@ -1,6 +1,0 @@
-# комментарий
-ls
-cd ..
-echo $HOME
-cd /net_takoy_papki
-exit
