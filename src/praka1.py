@@ -26,7 +26,11 @@ def raskryt(slova):
     for slovo in slova:
         if slovo.startswith("$"):
             peremennaya = slovo[1:] # Убираем $
-            result.append(os.environ.get(peremennaya, ""))
+            if peremennaya == "HOME":
+                znachenie = os.environ.get("USERPROFILE", "")
+            else:
+                znachenie = os.environ.get(peremennaya, "")
+            result.append(znachenie)
         else:
             result.append(slovo)
     return result
